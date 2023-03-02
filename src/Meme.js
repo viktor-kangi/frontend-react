@@ -38,6 +38,12 @@ class Meme extends Component {
     }
 
     render() {
+
+        const styleImg = {
+            height: "200px",
+            width: "200px"
+        }
+
         return (
             <div>
                 <input
@@ -46,7 +52,7 @@ class Meme extends Component {
                     />
                     <button onClick={this.changeImg}>Click me !!!</button>
                     <div>
-                        <img src={this.state.img}/>
+                        <img src={this.state.img} style={styleImg}/>
                         <h2>{this.state.text}</h2>
                      </div>
                     </div>
