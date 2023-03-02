@@ -11,6 +11,7 @@ class Meme extends Component {
         }
 
         this.printText = this.printText.bind(this);
+        this.changeImg = this.changeImg.bind(this);
     }
 
     componentDidMount(){
@@ -29,7 +30,12 @@ class Meme extends Component {
         this.setState({text:value})
     }
 
-    
+    changeImg() {
+        const randNum = Math.floor(Math.random()
+         * this.state.imgUrls.length);
+        const randImg = this.state.imgUrls[randNum].url
+        this.setState({img : randImg})
+    }
 
     render() {
         return (
@@ -39,6 +45,10 @@ class Meme extends Component {
                     onChange={this.printText}
                     />
                     <button onClick={this.changeImg}>Click me !!!</button>
+                    <div>
+                        <img src={this.state.img}/>
+                        <h2>{this.state.text}</h2>
+                     </div>
                     </div>
         )
     }
