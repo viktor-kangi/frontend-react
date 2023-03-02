@@ -9,6 +9,8 @@ class Meme extends Component {
             img:"",
             imgUrls:[]
         }
+
+        this.printText = this.printText.bind(this);
     }
 
     componentDidMount(){
@@ -22,6 +24,13 @@ class Meme extends Component {
 
     }
 
+    printText(event) {
+        const value = event.target.value;
+        this.setState({text:value})
+    }
+
+    
+
     render() {
         return (
             <div>
@@ -29,6 +38,7 @@ class Meme extends Component {
                     type="text" placeholder="Type anything..."
                     onChange={this.printText}
                     />
+                    <button onClick={this.changeImg}>Click me !!!</button>
                     </div>
         )
     }
